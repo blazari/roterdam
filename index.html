@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odpal cygara</title>
+    <style>
+        body{
+            background-color: gray;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        button{
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Odpal cygara roterdamowi!</h1>
+    <main>
+        
+        <img src="cygary.png" width="250" height="250">
+        
+        <img src="1.png" width="250" height="250" id="cygar">
+        
+        <img src="zapalniczka.png" width="250" height="250" id="zapalniczka"><button onclick="szansa()">Odpal</button>
+        
+    </main>
+    <script>
+        function odpal(){
+            var cygar = document.getElementById("cygar");
+            var zapalniczka = document.getElementById("zapalniczka");
+            if (cygar.src.includes("1.png")&&zapalniczka.src.includes("zapalniczka.png")) {
+                
+                cygar.src = "odpalony.png";
+                zapalniczka.src = "odpalona.png";
+            } else {
+                cygar.src = "1.png";
+                zapalniczka.src = "zapalniczka.png"
+            }
+            alert("Zapalniczka działa! Kto pali ten ma przerwe dali!");
+        }
+        function szansa() {
+            const chance = 0.2;
+            
+            if (Math.random() < chance) {
+                odpal();
+            } else {
+                alert("Zapalniczka gro w chuja próbuj dali!");
+            }
+        }
+    </script>
+</body>
+</html>
